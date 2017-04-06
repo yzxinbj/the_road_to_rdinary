@@ -1,0 +1,25 @@
+{
+    "name": "The road to ordinary",
+    "version": "0.0.1",
+    "description": "The road to ordinary",
+    "keywords": [
+        "css js node"
+    ],
+    "homepage": "http://JSLite.io",
+    "author": "yanzixian <yanzixian@yunniao.me>",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "licenses": "MIT",
+    "idoc": {
+        "theme": "default",
+        "md": [
+            "index.md",
+            "flex.md",
+            "webstrom.md",
+            "抠图.md",
+            "编码.md"
+        ]
+    }
+}
