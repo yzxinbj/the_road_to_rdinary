@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The road to ordinary</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                The road to ordinary
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="../../html/flex.html">flex</a></li><li><a href="../../html/webstrom.html">webstrom</a></li><li><a href="../../html/抠图.html">抠图</a></li><li><a href="../../html/编码.html">编码</a></li><li><a href="../../html/惰性函数-柯理化-互联网协议.html">惰性函数-柯理化-互联网协议</a></li><li><a href="#"><span></span>上路</a><ul><li class="active"><a href="../../html/上路/进制.html">进制</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0进制">进制</a><ul><li><a href="#t110进制转其他进制">10进制转其他进制</a></li><li><a href="#t2自定义进制">自定义进制</a></li><li><a href="#t3生成各个进制乘法表">生成各个进制乘法表</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0&#x8FDB;&#x5236;">&#x8FDB;&#x5236; <a href="#t0&#x8FDB;&#x5236;"> # </a></h1>
+<h2 id="t110&#x8FDB;&#x5236;&#x8F6C;&#x5176;&#x4ED6;&#x8FDB;&#x5236;">10&#x8FDB;&#x5236;&#x8F6C;&#x5176;&#x4ED6;&#x8FDB;&#x5236; <a href="#t110&#x8FDB;&#x5236;&#x8F6C;&#x5176;&#x4ED6;&#x8FDB;&#x5236;"> # </a></h2>
+<pre><code class="lang-javascript">
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;10&#x8FDB;&#x5236;&apos;</span>, <span class="hljs-string">&apos;16&#x8FDB;&#x5236;&apos;</span>, <span class="hljs-string">&apos;9&#x8FDB;&#x5236;&apos;</span>, <span class="hljs-string">&apos;7&#x8FDB;&#x5236;&apos;</span>, <span class="hljs-string">&apos;5&#x8FDB;&#x5236;&apos;</span>, <span class="hljs-string">&apos;2&#x8FDB;&#x5236;&apos;</span>);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span> ; i &lt; <span class="hljs-number">100</span> ; i++) {
+    <span class="hljs-built_in">console</span>.log(i +<span class="hljs-string">&apos;   &apos;</span>+ <span class="hljs-built_in">parseInt</span>(i, <span class="hljs-number">10</span>).toString(<span class="hljs-number">16</span>) +<span class="hljs-string">&apos;   &apos;</span>+ <span class="hljs-built_in">parseInt</span>(i, <span class="hljs-number">10</span>).toString(<span class="hljs-number">9</span>) +<span class="hljs-string">&apos;   &apos;</span>+ <span class="hljs-built_in">parseInt</span>(i, <span class="hljs-number">10</span>).toString(<span class="hljs-number">7</span>) +<span class="hljs-string">&apos;   &apos;</span>+ <span class="hljs-built_in">parseInt</span>(i, <span class="hljs-number">10</span>).toString(<span class="hljs-number">5</span>) +<span class="hljs-string">&apos;   &apos;</span>+ <span class="hljs-built_in">parseInt</span>(i, <span class="hljs-number">10</span>).toString(<span class="hljs-number">2</span>));
+}
+</code></pre>
+<h2 id="t2&#x81EA;&#x5B9A;&#x4E49;&#x8FDB;&#x5236;">&#x81EA;&#x5B9A;&#x4E49;&#x8FDB;&#x5236; <a href="#t2&#x81EA;&#x5B9A;&#x4E49;&#x8FDB;&#x5236;"> # </a></h2>
+<pre><code class="lang-javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">trans</span>(<span class="hljs-params">jinzhi, arr</span>) </span>{
+    <span class="hljs-keyword">var</span> res = [];
+    <span class="hljs-keyword">var</span> newNum;
+    <span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">100</span>) {
+        <span class="hljs-keyword">var</span> num = <span class="hljs-built_in">parseInt</span>(i, <span class="hljs-number">10</span>).toString(jinzhi);
+
+        <span class="hljs-keyword">var</span> arrNum = <span class="hljs-built_in">String</span>(num).split(<span class="hljs-string">&apos;&apos;</span>);
+
+        newNum = arrNum.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">curNum</span>) </span>{
+            <span class="hljs-keyword">var</span> new_;
+
+            arr.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">icon, index</span>) </span>{
+                <span class="hljs-keyword">if</span> (curNum == index) {
+                    new_ = icon;
+                }
+            })
+
+            <span class="hljs-keyword">return</span> new_;
+        });
+
+        res.push(newNum.join(<span class="hljs-string">&apos;&apos;</span>));
+
+        i++;
+    }
+
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-keyword">var</span> _5 = trans(<span class="hljs-number">5</span>, [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">8</span>]);
+<span class="hljs-keyword">var</span> _7 = trans(<span class="hljs-number">7</span>, [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">8</span>,<span class="hljs-number">4</span>,<span class="hljs-number">9</span>]);
+<span class="hljs-keyword">var</span> _8 = trans(<span class="hljs-number">8</span>, [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">8</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">9</span>]);
+<span class="hljs-keyword">var</span> _10 = trans(<span class="hljs-number">10</span>, [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">8</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]);
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x81EA;&#x5B9A;&#x4E49;&#x8FDB;&#x5236;&#xFF0C;5&#x8FDB;&#x5236;&#xFF0C;7&#x8FDB;&#x5236;&#xFF0C;8&#x8FDB;&#x5236;&#xFF0C;10&#x8FDB;&#x5236;&apos;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x7B2C;&#x4E00;&#x5217;&#x662F;&#x6B63;&#x5E38;&#x7684;10&#x8FDB;&#x5236;&apos;</span>);
+
+_5.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cur, index</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(index+<span class="hljs-string">&apos;   &apos;</span>+_5[index]+<span class="hljs-string">&apos;   &apos;</span>+_7[index]+<span class="hljs-string">&apos;   &apos;</span>+_8[index]+<span class="hljs-string">&apos;   &apos;</span>+_10[index]);
+});
+</code></pre>
+<h2 id="t3&#x751F;&#x6210;&#x5404;&#x4E2A;&#x8FDB;&#x5236;&#x4E58;&#x6CD5;&#x8868;">&#x751F;&#x6210;&#x5404;&#x4E2A;&#x8FDB;&#x5236;&#x4E58;&#x6CD5;&#x8868; <a href="#t3&#x751F;&#x6210;&#x5404;&#x4E2A;&#x8FDB;&#x5236;&#x4E58;&#x6CD5;&#x8868;"> # </a></h2>
+<pre><code>function biao(jinzhi) {
+    var arr = [];
+
+    for (var i = 1; i &lt; jinzhi ;i++) {
+        for (var j = 1; j &lt; i+1; j++) {
+            var s = Number(j).toString(jinzhi)+&apos;*&apos;+Number(i).toString(jinzhi)+&apos;=&apos;+Number(j*i).toString(jinzhi);
+            arr.push(s);
+        }
+
+        arr.push(&apos;\n&apos;)
+    }
+
+    return arr;
+}
+
+var arr = biao(7);
+
+console.log(arr.join());
+
+&#x52A0;&#x6CD5;&#x8868;&#x628A;&#x51FD;&#x6570;&#x91CC;&#x7684;*&#x53D8;+&#x5373;&#x53EF;
+</code></pre>
+    </div>
+
+</div>
+
+
+</body>
+</html>
