@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The road to ordinary</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                The road to ordinary
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="../../html/flex.html">flex</a></li><li><a href="../../html/webstrom.html">webstrom</a></li><li><a href="../../html/抠图.html">抠图</a></li><li><a href="../../html/编码.html">编码</a></li><li><a href="../../html/惰性函数-柯理化-互联网协议.html">惰性函数-柯理化-互联网协议</a></li><li><a href="#"><span></span>上路</a><ul><li><a href="../../html/上路/进制.html">进制</a></li></ul></li><li><a href="#"><span></span>踩坑之路</a><ul><li class="active"><a href="../../html/踩坑之路/smarty 环境搭建.html">smarty 环境搭建</a></li></ul></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0smarty环境搭建">smarty环境搭建</a><ul><li><a href="#t1背景">背景</a></li><li><a href="#t2问题及原因">问题及原因</a></li><li><a href="#t3解决办法">解决办法</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0smarty&#x73AF;&#x5883;&#x642D;&#x5EFA;">smarty&#x73AF;&#x5883;&#x642D;&#x5EFA; <a href="#t0smarty&#x73AF;&#x5883;&#x642D;&#x5EFA;"> # </a></h1>
+<h2 id="t1&#x80CC;&#x666F;">&#x80CC;&#x666F; <a href="#t1&#x80CC;&#x666F;"> # </a></h2>
+<p>&#x524D;&#x7AEF;&#x5229;&#x7528;node&#x6A21;&#x62DF;&#x540E;&#x7AEF;web&#x670D;&#x52A1;&#xFF0C;&#x5229;&#x7528;mock&#x5047;&#x6570;&#x636E;&#x6765;&#x5B9E;&#x73B0;&#x524D;&#x540E;&#x7AEF;&#x5206;&#x79BB;<br>windows&#x4E0B;&#x542F;&#x52A8;&#x57FA;&#x4E8E;node&#x7684;edp&#x670D;&#x52A1;&#xFF0C;&#x8C03;&#x7528;php&#x6765;&#x6E32;&#x67D3;smarty&#x6A21;&#x677F;</p>
+<h2 id="t2&#x95EE;&#x9898;&#x53CA;&#x539F;&#x56E0;">&#x95EE;&#x9898;&#x53CA;&#x539F;&#x56E0; <a href="#t2&#x95EE;&#x9898;&#x53CA;&#x539F;&#x56E0;"> # </a></h2>
+<p>edp webserver&#x670D;&#x52A1;&#x542F;&#x52A8;&#x540E;&#x6E32;&#x67D3;smarty&#x6A21;&#x677F;&#x62A5;&#x9519;&#xFF1A;</p>
+<pre><code>on line 57 &amp;quot;{%$len = mb_strlen($info.user.name, &apos;utf-8&apos;)%}&amp;quot; 
+unknown function &amp;quot;mb_strlen&amp;quot;&apos;
+</code></pre><p>&#x7531;&#x65B0;&#x5B89;&#x88C5;&#x7684;php&#x672A;&#x6253;&#x5F00;mb&#x62D3;&#x5C55;&#x9020;&#x6210;</p>
+<h2 id="t3&#x89E3;&#x51B3;&#x529E;&#x6CD5;">&#x89E3;&#x51B3;&#x529E;&#x6CD5; <a href="#t3&#x89E3;&#x51B3;&#x529E;&#x6CD5;"> # </a></h2>
+<p>&#x6253;&#x5F00;mb&#x62D3;&#x5C55;&#xFF1A;</p>
+<ul>
+<li>&#x5728;php&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230;php.ini&#xFF08;&#x6CA1;&#x6709;&#x7684;&#x8BDD;&#x590D;&#x5236;php.ini-development&#x4E3A;php.ini&#xFF09;</li>
+<li>&#x4FEE;&#x6539;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x53BB;&#x6389;&#x5206;&#x53F7;&#xFF0C;&#x5E76;&#x66F4;&#x6539;<code>extension_dir</code>&#x4E3A;&#x4F60;&#x672C;&#x673A;&#x7684;php&#x76EE;&#x5F55;</li>
+</ul>
+<pre><code>;extension_dir = &quot;./&quot;        ==&#x53D8;&#x6210;==&gt;  extension_dir = &quot;/php&quot;(&#x4F60;&#x81EA;&#x5DF1;&#x7684;php&#x76EE;&#x5F55;&#x5730;&#x5740;)
+;extension_dir = &quot;ext&quot;       ==&#x53D8;&#x6210;==&gt;  extension_dir = &quot;ext&quot;
+;extension=php_mbstring.dll  ==&#x53D8;&#x6210;==&gt;  extension=php_mbstring.dll
+</code></pre>
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
