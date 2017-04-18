@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The road to ordinary</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                The road to ordinary
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">index</a></li><li><a href="../../html/flex.html">flex</a></li><li><a href="../../html/webstrom.html">webstrom</a></li><li><a href="../../html/编码.html">编码</a></li><li><a href="../../html/惰性函数-柯理化-互联网协议.html">惰性函数-柯理化-互联网协议</a></li><li><a href="#"><span></span>上路</a><ul><li><a href="../../html/上路/进制.html">进制</a></li></ul></li><li><a href="#"><span></span>踩坑之路</a><ul><li><a href="../../html/踩坑之路/smarty 环境搭建.html">smarty 环境搭建</a></li><li><a href="../../html/踩坑之路/gh-pages build faild.html">gh-pages build faild</a></li><li class="active"><a href="../../html/踩坑之路/win下问题汇总.html">win下问题汇总</a></li></ul></li><li><a href="../../html/关于复制.html">关于复制</a></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0win下问题汇总">win下问题汇总</a><ul><li><a href="#t1win下连接开发机遇到的问题">win下连接开发机遇到的问题</a></li><li><a href="#t2nvm for windows">nvm for windows</a></li><li><a href="#t3npm 镜像更换">npm 镜像更换</a></li><li><a href="#t4node项目构建">node项目构建</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0win&#x4E0B;&#x95EE;&#x9898;&#x6C47;&#x603B;">win&#x4E0B;&#x95EE;&#x9898;&#x6C47;&#x603B; <a href="#t0win&#x4E0B;&#x95EE;&#x9898;&#x6C47;&#x603B;"> # </a></h1>
+<p>&#x6B63;&#x597D;&#x6700;&#x8FD1;&#x6362;ssd&#x540E;&#xFF0C;&#x91CD;&#x88C5;&#x7CFB;&#x7EDF;&#x540E;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x548C;&#x5B89;&#x88C5;&#x5404;&#x79CD;&#x5DE5;&#x5177;<br>&#x6240;&#x4EE5;&#x6B63;&#x597D;&#x628A;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x5199;&#x4E0B;&#xFF0C;&#x65B9;&#x4FBF;&#x4ED6;&#x4EBA;</p>
+<h2 id="t1win&#x4E0B;&#x8FDE;&#x63A5;&#x5F00;&#x53D1;&#x673A;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;">win&#x4E0B;&#x8FDE;&#x63A5;&#x5F00;&#x53D1;&#x673A;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898; <a href="#t1win&#x4E0B;&#x8FDE;&#x63A5;&#x5F00;&#x53D1;&#x673A;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;"> # </a></h2>
+<ol>
+<li>&#x9700;&#x8981;&#x4E0B;&#x8F7D;XShell&#xFF0C;&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#x70B9;&#x51FB;&#x5DE5;&#x5177;&#x4E0B;&#x7684;&#x65B0;&#x5EFA;&#x7528;&#x6237;&#x5BC6;&#x94A5;&#x751F;&#x6210;&#x5411;&#x5BFC;&#xFF0C;&#x6309;&#x6B65;&#x9AA4;&#x751F;&#x6210;&#x5BC6;&#x94A5;</li>
+<li>&#x516C;&#x53F8;&#x662F;&#x7528;&#x7684;freeipa&#x6765;&#x505A;&#x7BA1;&#x7406;&#xFF0C;&#x5728;&#x4E0A;&#x9762;&#x52A0;&#x4E0A;&#x751F;&#x6210;&#x7684;&#x5BC6;&#x94A5;<pre><code>&#x767B;&#x5F55;freeipa66.xhj.com&#xFF0C;&#x5982;&#x679C;&#x8BBF;&#x95EE;&#x4E0D;&#x5230;&#x9700;&#x8981;&#x66F4;&#x6539;&#x672C;&#x673A;&#x7684;host&#xFF0C;&#x5230;&#x6307;&#x5B9A;&#x7684;ip
+host&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF1A;C:\Windows\System32\drivers\etc
+</code></pre></li>
+</ol>
+<h2 id="t2nvm for windows">nvm for windows <a href="#t2nvm for windows"> # </a></h2>
+<p>&#x7531;&#x4E8E;&#x5F00;&#x53D1;&#x4E0D;&#x540C;&#x9879;&#x76EE;&#x65F6;&#xFF0C;&#x8001;&#x9879;&#x76EE;node&#x7248;&#x672C;&#x6709;&#x8981;&#x6C42;&#x5230;&#x5F88;&#x4F4E;&#xFF0C;win&#x4E0B;&#x6709;nvm for windows<br><code>https://github.com/coreybutler/nvm-windows</code>  </p>
+<h2 id="t3npm &#x955C;&#x50CF;&#x66F4;&#x6362;">npm &#x955C;&#x50CF;&#x66F4;&#x6362; <a href="#t3npm &#x955C;&#x50CF;&#x66F4;&#x6362;"> # </a></h2>
+<pre><code>&#x4E34;&#x65F6;&#x4F7F;&#x7528; &#x5728;&#x547D;&#x4EE4;&#x540E;&#x8FFD;&#x52A0;--registry &#x53C2;&#x6570;
+npm install express --registry https://r.cnpmjs.org/
+&#x4E00;&#x6B21;&#x6027;&#x66F4;&#x6539;&#x5E76;&#x9A8C;&#x8BC1;
+npm config set registry https://r.cnpmjs.org/
+npm config get registry
+</code></pre><h2 id="t4node&#x9879;&#x76EE;&#x6784;&#x5EFA;">node&#x9879;&#x76EE;&#x6784;&#x5EFA; <a href="#t4node&#x9879;&#x76EE;&#x6784;&#x5EFA;"> # </a></h2>
+<ol>
+<li>&#x786E;&#x5B9A;node&#x7248;&#x672C;</li>
+<li>&#x786E;&#x5B9A;&#x4F9D;&#x8D56;</li>
+<li>&#x786E;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x73AF;&#x5883;&#x53D8;&#x91CF;</li>
+</ol>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
