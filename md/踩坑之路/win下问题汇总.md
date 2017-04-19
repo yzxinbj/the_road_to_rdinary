@@ -26,3 +26,9 @@ npm config get registry
 1. 确定node版本
 2. 确定依赖
 3. 确定配置文件，环境变量
+
+## git push时报错
+错误信息：ssh connect port 22 connection timed out  
+解决办法：  
+1. 百度下是修改.ssh/config中github的port 
+2. 如果.ssh下有known_hosts文件，找到`github.com,192.30.255.112`ip后补上端口:443即可

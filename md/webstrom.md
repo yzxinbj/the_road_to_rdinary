@@ -13,3 +13,12 @@
 ## webstrom 设置将*.tpl文件设置为html识别
 找到设置里的File Type（如图），同理其他的后缀不同的文件都能改成你想要被识别的文件
 ![](/static/img/tpl_to_html.png)
+
+## 自定义代码补全，快捷输入
+找到设置里的Live Templates（如图），点击+号，如图操作即可  
+其中$PARAM$表示光标停留的位置  
+![](/static/img/kuaijieshuru.png)  
+
+注意不要忘记点击底部的Define勾选相应语言  
+右侧的option还可以选择快捷输入的方式，默认是tab  
+![](/static/img/kuaijieshuru1.png)
