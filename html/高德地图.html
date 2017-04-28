@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The road to ordinary</title>
+        
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                The road to ordinary
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../index.html">index</a></li><li><a href="../html/flex.html">flex</a></li><li><a href="../html/webstrom.html">webstrom</a></li><li><a href="../html/编码.html">编码</a></li><li><a href="../html/惰性函数-柯理化-互联网协议.html">惰性函数-柯理化-互联网协议</a></li><li><a href="#"><span></span>上路</a><ul><li><a href="../html/上路/进制.html">进制</a></li></ul></li><li><a href="#"><span></span>踩坑之路</a><ul><li><a href="../html/踩坑之路/smarty 环境搭建.html">smarty 环境搭建</a></li><li><a href="../html/踩坑之路/gh-pages build faild.html">gh-pages build faild</a></li><li><a href="../html/踩坑之路/win下问题汇总.html">win下问题汇总</a></li></ul></li><li><a href="../html/关于复制.html">关于复制</a></li><li class="active"><a href="../html/高德地图.html">高德地图</a></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc" style="position: relative">
+        <ul><li><a href="#t0AMap">AMap</a><ul><li><a href="#t1Marker">Marker</a></li><li><a href="#t2地图工具方法API">地图工具方法API</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0AMap">AMap <a href="#t0AMap"> # </a></h1>
+<p>&#x9AD8;&#x5FB7;&#x5730;&#x56FE;&#x5E38;&#x7528;API&#x4F7F;&#x7528;&#x8BB0;&#x5F55;</p>
+<h3 id="t1Marker">Marker <a href="#t1Marker"> # </a></h3>
+<p>&#x5730;&#x56FE;&#x6392;&#x7EBF;&#x4E2D;&#x4F7F;&#x7528;&#x5230;&#x7684;API</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> config = {
+    <span class="hljs-attr">zIndex</span>: <span class="hljs-number">100</span>, <span class="hljs-comment">//&#x9ED8;&#x8BA4;100&#xFF0C;&#x5730;&#x56FE;&#x6392;&#x7EBF;&#x4E2D;&#x9700;&#x8981;&#x8BA9;&#x4E1A;&#x52A1;&#x4EBA;&#x5458;&#x4E00;&#x773C;&#x770B;&#x6E05;&#x7EA2;&#x8272;&#x7684;&#x672A;&#x6392;&#x7EBF;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x8BBE;&#x7F6E;&#x7EA2;&#x8272;&#x7684;&#x4E3A;101</span>
+    map: map, <span class="hljs-comment">// &#x5728;&#x90A3;&#x4E2A;&#x5730;&#x56FE;&#x4E0A;&#x8BBE;&#x7F6E;marker</span>
+    position: [], <span class="hljs-comment">// &#x5750;&#x6807;</span>
+    data: data <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;</span>
+};
+<span class="hljs-keyword">var</span> marker = <span class="hljs-keyword">new</span> AMap.Marker({ <span class="hljs-comment">//&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x70B9;&#x6807;&#x8BB0;</span>
+    zIndex: config.zIndex,
+    <span class="hljs-attr">map</span>: config.map,
+    <span class="hljs-attr">position</span>: config.position, <span class="hljs-comment">//&#x57FA;&#x70B9;&#x4F4D;&#x7F6E;</span>
+    offset: <span class="hljs-keyword">new</span> AMap.Pixel(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>), <span class="hljs-comment">//&#x76F8;&#x5BF9;&#x4E8E;&#x57FA;&#x70B9;&#x7684;&#x504F;&#x79FB;&#x4F4D;&#x7F6E;,&#x9ED8;&#x8BA4;0</span>
+    draggable: <span class="hljs-literal">false</span>,  <span class="hljs-comment">//&#x662F;&#x5426;&#x53EF;&#x62D6;&#x52A8;</span>
+    content: <span class="hljs-string">&apos;&lt;div class=&quot;&apos;</span> + config.markType + <span class="hljs-string">&apos;&quot;&gt;&lt;/div&gt;&apos;</span>,   <span class="hljs-comment">//&#x81EA;&#x5B9A;&#x4E49;&#x70B9;&#x6807;&#x8BB0;&#x8986;&#x76D6;&#x7269;&#x5185;&#x5BB9;</span>
+    extData: config.data <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;</span>
+});
+</code></pre>
+<p>&#x8BBE;&#x7F6E;&#x3001;&#x83B7;&#x53D6;marker&#x4E0A;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;</p>
+<pre><code class="lang-javascript">Marker.setExtData();
+
+<span class="hljs-keyword">var</span> data = Marker.getExtData();
+
+<span class="hljs-comment">// &#x5982;&#x679C;&#x60F3;&#x5355;&#x72EC;&#x66F4;&#x6539;data&#x91CC;&#x7684;&#x4E00;&#x4E2A;&#x65E0;&#x9700;&#x7528;setExtData</span>
+<span class="hljs-comment">// &#x76F4;&#x63A5;data.is_line = true;&#x5373;&#x53EF;</span>
+</code></pre>
+<p>&#x89E6;&#x53D1;marker&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</p>
+<pre><code class="lang-javascript">AMap.event.trigger(Marker, <span class="hljs-string">&apos;click&apos;</span>);
+</code></pre>
+<p>&#x79FB;&#x9664;marker</p>
+<pre><code class="lang-javascript">Marker.setMap(<span class="hljs-literal">null</span>);
+</code></pre>
+<p>&#x83B7;&#x53D6;marker&#x4F4D;&#x7F6E;</p>
+<pre><code class="lang-javascript">marker.getPosition()
+</code></pre>
+<h2 id="t2&#x5730;&#x56FE;&#x5DE5;&#x5177;&#x65B9;&#x6CD5;API">&#x5730;&#x56FE;&#x5DE5;&#x5177;&#x65B9;&#x6CD5;API <a href="#t2&#x5730;&#x56FE;&#x5DE5;&#x5177;&#x65B9;&#x6CD5;API"> # </a></h2>
+<p>&#x5730;&#x56FE;&#x6D4B;&#x8DDD;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> ruler;
+
+map.plugin([<span class="hljs-string">&quot;AMap.RangingTool&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    ruler = <span class="hljs-keyword">new</span> AMap.RangingTool(map);
+
+    AMap.event.addListener(ruler, <span class="hljs-string">&quot;end&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+        ruler.turnOff();
+    });
+
+    ruler.turnOn();
+});
+</code></pre>
+<p>&#x65B9;&#x5F62;&#x6846;&#x9009;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x6CE8;&#x610F;&#x4F7F;&#x7528;mouseTool&#x9700;&#x8981;&#x5728;script&#x5F15;&#x7528;&#x65F6;&#x591A;&#x4F20;&#x4E00;&#x4E2A;&#x53C2;&#x6570;plugin=AMap.MouseTool</span>
+<span class="hljs-comment">// &lt;script src=&quot;http://webapi.amap.com/maps?v=1.3&amp;key=&#x4F60;&#x7684;key&amp;plugin=AMap.MouseTool&quot;&gt;&lt;/script&gt;</span>
+
+mouseTool = <span class="hljs-keyword">new</span> AMap.MouseTool(map);
+mouseTool.rectangle();<span class="hljs-comment">// &#x6253;&#x5F00;&#x6846;&#x9009;</span>
+
+AMap.event.addListener(mouseTool, <span class="hljs-string">&apos;draw&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+    e.obj.contains(marker.getPosition()); <span class="hljs-comment">//&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x70B9;&#x662F;&#x5426;&#x5728;&#x6846;&#x9009;&#x7684;&#x8303;&#x56F4;&#x5185;</span>
+    mouseTool.close(<span class="hljs-literal">true</span>);<span class="hljs-comment">// &#x6846;&#x9009;&#x7ED3;&#x675F;&#x5373;&#x6D88;&#x5931;</span>
+});
+</code></pre>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
