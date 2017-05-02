@@ -35,7 +35,7 @@
 <div class="container">
 
     <div class="page-toc" style="position: relative">
-        <ul><li><a href="#t0AMap">AMap</a><ul><li><a href="#t1Marker">Marker</a></li><li><a href="#t2地图工具方法API">地图工具方法API</a></li></ul></li></ul>
+        <ul><li><a href="#t0AMap">AMap</a><ul><li><a href="#t1Marker">Marker</a></li><li><a href="#t2地图工具方法API">地图工具方法API</a></li><li><a href="#t3InfoWindow">InfoWindow</a></li></ul></li></ul>
     </div>
     
     <div class="content markdown-body">
@@ -102,6 +102,12 @@ AMap.event.addListener(mouseTool, <span class="hljs-string">&apos;draw&apos;</sp
     mouseTool.close(<span class="hljs-literal">true</span>);<span class="hljs-comment">// &#x6846;&#x9009;&#x7ED3;&#x675F;&#x5373;&#x6D88;&#x5931;</span>
 });
 </code></pre>
+<h2 id="t3InfoWindow">InfoWindow <a href="#t3InfoWindow"> # </a></h2>
+<p>```javascript
+var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, 0)});
+infoWindow.setContent(&apos;wo shi html&apos;);
+infoWindow.open(map, marker.getPosition());</p>
+<p>map.setFitView();// &#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x89C6;&#x56FE;&#x7F29;&#x653E;&#x4E3A;&#x5408;&#x9002;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5373;&#x89C6;&#x56FE;&#x5185;&#x5C55;&#x793A;&#x6240;&#x6709;&#x8986;&#x76D6;&#x7269;</p>
 
     </div>
 
