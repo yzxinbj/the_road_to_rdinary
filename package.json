@@ -35,7 +35,10 @@
             "关于复制.md",
             "高德地图.md",
             "SQL.md",
-            "Zepto.js.md"
+            "Zepto.js.md",
+            "others.md",
+            "vim.md",
+            "多态.md"
         ]
     }
 }
