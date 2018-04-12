@@ -23,4 +23,5 @@ unknown function &quot;mb_strlen&quot;'
 ;extension=php_mbstring.dll  ==变成==>  extension=php_mbstring.dll
 
 ```
-   
+## 报 php-cgi 错误
+安装 php 时 追加 --with-cgi 参数，或改装 php56
