@@ -1,12 +1,12 @@
 {
-    "name": "The road to ordinary",
-    "version": "0.0.1",
-    "description": "The road to ordinary",
+    "name": "the_road_to_rdinary",
+    "version": "1.0.0",
+    "description": "something...",
     "keywords": [
-        "css js node"
+        ""
     ],
     "homepage": "http://JSLite.io",
-    "author": "yanzixian <yanzixian@yunniao.me>",
+    "author": "颜子贤 <yanzixian@yunniao.me>",
     "repository": {
         "type": "git",
         "url": ""
@@ -15,30 +15,34 @@
     "idoc": {
         "theme": "default",
         "md": [
-            "index.md",
+            "SQL.md",
             "flex.md",
+            "index.md",
+            {
+                "others": [
+                    "Zepto.js.md",
+                    "others.md",
+                    "vim.md",
+                    "多态.md"
+                ]
+            },
             "webstrom.md",
-            "编码.md",
-            "惰性函数-柯理化-互联网协议.md",
             {
                 "上路": [
                     "进制.md"
                 ]
             },
+            "关于复制.md",
+            "惰性函数-柯理化-互联网协议.md",
+            "编码.md",
             {
                 "踩坑之路": [
-                    "smarty 环境搭建.md",
                     "gh-pages build faild.md",
+                    "smarty 环境搭建.md",
                     "win下问题汇总.md"
                 ]
             },
-            "关于复制.md",
-            "高德地图.md",
-            "SQL.md",
-            "Zepto.js.md",
-            "others.md",
-            "vim.md",
-            "多态.md"
+            "高德地图.md"
         ]
     }
 }
